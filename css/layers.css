@@ -4,6 +4,17 @@
     --border-color: #000000;
 }
 
+@keyframes layer-fade-in {
+    from {
+        margin-top: 40px;
+        opacity: 0;
+    }
+    to {
+        margin-top: 0;
+        opacity: 1;
+    }
+}
+
 .layer-1, .layer-2, .layer-3, .layer-4, .layer-5, .layer-6 {
     position: relative;
     background-color: var(--layer-background);
@@ -14,15 +25,10 @@
     transform-style: preserve-3d;
     margin: 0 auto -160px auto;
     transition: margin 1s ease-out;
-    animation-name: layer-fade-in;
-    animation-duration: 0.8s;
+    animation: layer-fade-in 0.8s ease-out;
 }
-/*    .layer-1:hover {
-        margin: 0 auto -60px auto;
-        transition: margin 1.2s ease-out;
-    }
-    */
-    .layer-2:hover, .layer-3:hover {
+
+    .layer-2:hover, .layer-3:hover, .layer-4:hover, .layer-5:hover, .layer-6:hover {
         margin: 100px auto -160px auto;
         transition: margin 1.2s ease-out;
     }
@@ -40,8 +46,6 @@
         transform: rotateY(-90deg) translateZ(14px) translateY(6px);
         margin-top: 0;
         opacity: 1;
-        animation-name: layer-fade-in;
-        animation-duration: 0.8s;
     }
     .left {
         background-color: var(--layer-background);
@@ -49,19 +53,8 @@
         height: 200px;
         border: 1px solid var(--border-color);
         transform: rotateZ(270deg) rotateY(-90deg) translateX(78px) translateY(-8px);
-        animation-name: layer-fade-in;
-        animation-duration: 0.8s;
-    }
-
-    @keyframes layer-fade-in {
-        from {
-            margin-top: 40px;
-            opacity: 0;
-        }
-        to {
-            margin-top: 0;
-            opacity: 1;
-        }
+        margin-top: 0;
+        opacity: 1;
     }
 
 .layer-1 { z-index: 6; }
@@ -70,8 +63,3 @@
 .layer-4 { z-index: 4; }
 .layer-5 { z-index: 5; }
 .layer-6 { z-index: 6; }
-
-/*
-.layer-1, .layer-5 { margin: 0 auto -140px auto; }
-.layer-2, .layer-4 { margin: 0 auto -150px auto; }
-.layer-3, .layer-6 { margin: 0 auto -160px auto; }*/
