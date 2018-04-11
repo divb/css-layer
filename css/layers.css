@@ -1,0 +1,68 @@
+:root {
+    --layer-background: #ffffff;
+    --mf-orange: rgb(236,116,4);
+    --border-color: #000000;
+}
+
+@keyframes layer {
+    from {
+        margin-left: 0;
+    }
+    to {
+        margin-left: 40vw;
+    }
+}
+
+.layer-1, .layer-2, .layer-3, .layer-4, .layer-5, .layer-6 {
+    position: relative;
+    background-color: var(--layer-background);
+    width: 200px;
+    height: 200px;
+    border: 1px solid var(--border-color);
+    transform: rotateX(60deg) rotateY(0deg) rotateZ(-45deg);
+    transform-style: preserve-3d;
+    margin: 0 auto -160px auto;
+    transition: margin 1s ease-out;
+    /*animation-name: layer;
+    animation-duration: 1s;*/
+}
+    .layer-1:hover {
+        margin: 0 auto -60px auto;
+        transition: margin 1.2s ease-out;
+    }
+    .layer-2:hover, .layer-3:hover {
+        margin: 100px auto -160px auto;
+        transition: margin 1.2s ease-out;
+    }
+        .layer-2 h2, .layer-3 h2 {
+            position: absolute;
+            left: 25px;
+        }
+
+    .front {
+        background-color: var(--layer-background);
+        width: 10px;
+        height: 200px;
+        border: 1px solid var(--border-color);
+        transform: rotateY(-90deg) translateZ(14px) translateY(6px);
+    }
+    .left {
+        background-color: var(--layer-background);
+        width: 10px;
+        height: 200px;
+        border: 1px solid var(--border-color);
+        transform: rotateZ(270deg) rotateY(-90deg) translateX(78px) translateY(-8px);
+    }
+
+
+.layer-1 { z-index: 6; }
+.layer-2 { z-index: 5; }
+.layer-3 { z-index: 3; background-color: var(--mf-orange); }
+.layer-4 { z-index: 4; }
+.layer-5 { z-index: 5; }
+.layer-6 { z-index: 6; }
+
+/*
+.layer-1, .layer-5 { margin: 0 auto -140px auto; }
+.layer-2, .layer-4 { margin: 0 auto -150px auto; }
+.layer-3, .layer-6 { margin: 0 auto -160px auto; }*/
